@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supermercado</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ff9a9e, #ff8765);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+        h1 {
+            color: #333;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        label {
+            font-size: 1.1rem;
+            color: #555;
+        }
+        input[type="date"] {
+            width: 100%;
+            padding: 0.8rem;
+            margin: 1rem 0;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+        input[type="date"]:focus {
+            border-color: #ff6f61;
+        }
+        button {
+            background: #ff6f61;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            margin-top: 10px;
+        }
+        button:hover {
+            background: #ff4a3d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Supermercado</h1>
+        <form action="ejercicio2.php" method="POST">
+            <label for="Precio">Precio base del articulo:</label>
+            <input type="number" id="Precio" name="Precio" required>
+            <button type="submit">Comprar</button>
+        </form>
+    </div>
+</body>
+</html>
