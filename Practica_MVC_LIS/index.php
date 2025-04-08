@@ -1,33 +1,19 @@
 <?php
-//include_once "models/EditorialesModel.php";
-include_once "models/AutoresModel.php";
+include_once 'controllers/EditorialesController.php'; 
+include_once 'controllers/IndexController.php';
+include_once 'controllers/AutoresController.php'; 
 
-//$model_editorial = new EditorialesModel();
-$model_autor = new AutoresModel();
+const PATH='/Practica_MVC'; //cadena constante por si movemos las cosas
 
-$editorial = [
-    'codigo_editorial'=>'EDI903',
-    'nombre_editorial'=>'prueba2',
-    'contacto'=>'prueba_editado',
-    'telefono'=>'prueba'
-];
+$url = $_SERVER['REQUEST_URI'];
+$slice=explode('/',$url);
+//print_r($slice);
+$controller=empty($slice[2])?"IndexController":$slice[2]."Controller";
+$method=empty($slice[3])?"Index":$slice[3];
+$params = empty($slice[4])?[]:array_slice($slice,4);
 
-$autor=[
-    'codigo_autor'=>'AUT013',
-    'nombre_autor'=>'prueba_actualizada',
-    'nacionalidad'=>'prueba'
-];
+$cont = new $controller;
+$cont->$method($params);
 
-//editoriales
-
-//var_dump($model_editorial->get('EDI001')); //get one or all if doesn't have parameter
-//echo $model_editorial->insert($editorial); //insert
-//echo $model_editorial -> delete('EDI903'); //delete
-//echo $model_editorial -> update($editorial); //update
-
-//autores
-
-//var_dump($model_autor->get('AUT001')); //get one or all if doesn't have parameter
-//echo $model_autor->insert($autor); //insert
-//echo $model_autor -> delete('AUT013'); //delete
-//echo $model_autor -> update($autor); //update
+//todas nuestras peticiones pasan por este archivo
+?>

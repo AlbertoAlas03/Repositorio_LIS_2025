@@ -3,7 +3,7 @@
 //no vamos a crear instancia de model
 abstract class Model
 {
-    private $host = 'localhost';
+    private $host = 'localhost:3306'; //change port
     private $user = 'root';
     private $password = '';
     private $db_name = 'inventario_libros';
